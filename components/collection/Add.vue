@@ -51,6 +51,7 @@
 
 <script setup>
 import {
+  ref,
   format,
   addMonths,
   subMonths,
@@ -60,10 +61,11 @@ import {
 } from "date-fns";
 
 let currentDate = new Date();
-let years = []; // Array to store years
-let months = []; // Array to store months
-let selectedYear = null; // Currently selected year
-let selectedMonth = null; // Currently selected month
+const years = ref([]); // Array to store years
+const months = ref([]); // Array to store months
+const selectedYear = ref(null); // Currently selected year
+const selectedMonth = ref(null); // Currently selected month
+
 
 const currentMonth = format(currentDate, "MMMM yyyy");
 
